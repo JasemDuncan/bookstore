@@ -23,6 +23,7 @@ To get a local copy up and running follow these simple steps.
 - Open your console and change the current working directory into the destination for this project.
 - Type `git clone git@github.com:JasemDuncan/bookstore.git`
 - Type Enter to finish the installation process.
+- Run command in terminal: npm start
 
 ## Authors
 

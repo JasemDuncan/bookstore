@@ -6,8 +6,8 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import Books from './redux/books/books';
-import Categories from './redux/categories/categories';
+import Books from './components/Books';
+import Categories from './components/Categories';
 
 class App extends React.Component {
   constructor(props) {
