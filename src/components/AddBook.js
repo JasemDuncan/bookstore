@@ -20,8 +20,6 @@ const AddBook = () => {
     },
   ];
 
-  //   const [category, setCategory] = useState('');
-
   return (
     <>
       <div>

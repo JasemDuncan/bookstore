@@ -7,8 +7,6 @@ const Book = (props) => {
   } = props;
 
   const BooksData = {
-    // gender: 'Action',
-    // title: 'The Hunger Games',
     director: 'Suzanne Collins',
     porcentage: '64%',
     chapter: 'Chapter 17',
