@@ -77,8 +77,8 @@ const AddBook = () => {
                 required
               >
                 <option value="" disabled hidden>Category</option>
-                { categories.map((item) => (
-                  <option key={item.id} value={item.name}>{item.name}</option>
+                { categories.map((items) => (
+                  <option key={items.id} value={items.name}>{items.name}</option>
                 ))}
               </select>
             </div>
