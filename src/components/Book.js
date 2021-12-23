@@ -1,20 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
+  const dispatch = useDispatch();
   const {
-    title, category,
+    id, title, category,
   } = props;
 
-  const BooksData = {
-    director: 'Suzanne Collins',
-    porcentage: '64%',
-    chapter: 'Chapter 17',
+  const deleteBook = (book) => {
+    dispatch(removeBook(book));
   };
-
-  const {
-    director, porcentage, chapter,
-  } = BooksData;
 
   return (
     <>
@@ -23,24 +20,20 @@ const Book = (props) => {
           <li>
             <div>
               <div>
-                {`${category}`}
+                {category}
               </div>
               <div>
-                {`${title}`}
+                {title}
               </div>
-              <div>
-                {director}
-              </div>
+              <div />
               <div>
                 <div>Comments</div>
-                <button type="button">Remove</button>
+                <button type="button" onClick={() => deleteBook(id)}>Remove</button>
                 <div>Edit</div>
               </div>
             </div>
             <div>
-              <div>
-                {porcentage}
-              </div>
+              <div />
               <div>
                 Completed
               </div>
@@ -49,9 +42,7 @@ const Book = (props) => {
               <div>
                 CURRENT CHAPTER
               </div>
-              <div>
-                {chapter}
-              </div>
+              <div />
               <div>
                 UPDATE PROGRESS
               </div>
@@ -64,6 +55,7 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
 };

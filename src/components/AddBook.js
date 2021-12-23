@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as id } from 'uuid';
+import { addBook } from '../redux/books/books';
 
 const AddBook = () => {
   const categories = [
@@ -20,20 +23,60 @@ const AddBook = () => {
     },
   ];
 
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+
+  const lblBookTitleChanged = (e) => {
+    e.preventDefault();
+    setTitle(e.target.value);
+  };
+
+  const chkCategoriesChanged = (e) => {
+    e.preventDefault();
+    setCategory(e.target.value);
+  };
+
+  const Submit = () => {
+    const newBook = {
+      id: id(),
+      title,
+      category,
+    };
+
+    dispatch(addBook(newBook));
+    setTitle('');
+    setCategory('');
+  };
+
   return (
     <>
       <div>
-        <form action="/">
+        <form action="/" onSubmit={Submit}>
           <div>
             <div> ADD NEW BOOK</div>
             <div>
               {' '}
-              <input type="text" />
+              <input
+                type="text"
+                value={title}
+                placeholder="Write book title"
+                id="lblBookTitle"
+                onChange={lblBookTitleChanged}
+                required
+              />
             </div>
           </div>
           <div>
             <div>
-              <select name="categories" id="Category" placeholder="Category">
+              <select
+                id="chkCategories"
+                placeholder="Category"
+                value={category}
+                onChange={chkCategoriesChanged}
+                required
+              >
+                <option value="" disabled hidden>Category</option>
                 { categories.map((item) => (
                   <option key={item.id} value={item.name}>{item.name}</option>
                 ))}
@@ -41,7 +84,7 @@ const AddBook = () => {
             </div>
           </div>
           <div>
-            <input type="submit" value="Submit" />
+            <button type="submit" value="Submit" onClick={Submit}>Add Book</button>
           </div>
         </form>
       </div>
