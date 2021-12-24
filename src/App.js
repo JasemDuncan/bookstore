@@ -4,8 +4,10 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
 } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 import Books from './components/Books';
 import Categories from './components/Categories';
 
@@ -17,29 +19,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <div>
-            <div>
-              Bookstore CMS
+      <>
+        {' '}
+        <Navbar bg="light" variant="light">
+          <Navbar.Brand href="/">Bookstore CMS</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/">BOOKS</Nav.Link>
+            <Nav.Link href="/Categories">CATEGORIES</Nav.Link>
+          </Nav>
+        </Navbar>
+        <Container>
+          <Router>
+            <div className="Row">
+              <Routes>
+                <Route path="/" element={<Books />} />
+                <Route path="Categories" element={<Categories />} />
+              </Routes>
             </div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Books</Link>
-                </li>
-                <li>
-                  <Link to="/Categories">Categories</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <Routes>
-            <Route path="/" element={<Books />} />
-            <Route path="Categories" element={<Categories />} />
-          </Routes>
-        </div>
-      </Router>
+          </Router>
+        </Container>
+      </>
     );
   }
 }

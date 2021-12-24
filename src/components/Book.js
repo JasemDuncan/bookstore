@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import Table from 'react-bootstrap/Table';
 import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
@@ -16,7 +17,7 @@ const Book = (props) => {
   return (
     <>
       <div>
-        <ul>
+        <Table>
           <li>
             <div>
               <div>
@@ -48,7 +49,7 @@ const Book = (props) => {
               </div>
             </div>
           </li>
-        </ul>
+        </Table>
       </div>
     </>
   );
