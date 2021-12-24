@@ -1,5 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto+Slab:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap');
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.Container{
+  background-color: rgb(249, 249, 249);  
+}
+
+.NavBar{
+  background-color: rgb(255, 255, 255);
+}
+
+.ListGroup{
+  margin: 10px 0 10px 0;
+  border-radius: 4px;  
+  height: 170px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.Lesson-Panel{ 
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;
+  align-items: center;  
+  /* background-color: red; */
+  height: 140px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.first-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.crud{
+  display: flex;
+  flex-direction: row;
+}
+
+.School-of{
+  width: 3.063rem;
+  height: 1.125rem;
+  /* margin: 0 2.438rem 0 0; */
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.Title {
+  width: 12.313rem;
+  height: 1.813rem;
+  /* margin: 0.188rem 20.188rem 0 0; */
+  font-family: Roboto;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
+}
+
+.Suzanne-Collins {
+  width: 6.688rem;
+  height: 1.188rem;
+  /* margin: 0.25rem 0 0; */
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.Comments {
+  width: 4.563rem;
+  height: 1.188rem;
+  /* margin: 0.188rem 0.938rem 0.125rem 0; */
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.Remove {
+  width: 3.375rem;
+  /* height: 1.188rem; */
+  /* margin: 0.188rem 0.938rem 0.125rem 0; */
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  background: none!important;
+  border: none;
+  /* padding: 0!important;   */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;  
+  cursor: pointer;
+}
+
+.Edit {
+  width: 1.688rem;
+  height: 1.188rem;
+  /* margin: 0.188rem 18.625rem 0.125rem 1.063rem; */
+  font-family: Roboto;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.Line-2 {
+  width: 0.125rem;
+  height: 1.5rem;
+  margin: 0 1.063rem 0 0.938rem;
+  border: solid 1px var(--white-two);
+  color: rgb(241, 241, 241);
 }

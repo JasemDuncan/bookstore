@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+
 import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
@@ -16,40 +17,49 @@ const Book = (props) => {
 
   return (
     <>
-      <div>
-        <Table>
-          <li>
-            <div>
-              <div>
-                {category}
-              </div>
-              <div>
-                {title}
-              </div>
-              <div />
-              <div>
-                <div>Comments</div>
-                <button type="button" onClick={() => deleteBook(id)}>Remove</button>
-                <div>Edit</div>
-              </div>
-            </div>
-            <div>
-              <div />
-              <div>
-                Completed
-              </div>
-            </div>
-            <div>
-              <div>
-                CURRENT CHAPTER
-              </div>
-              <div />
-              <div>
-                UPDATE PROGRESS
-              </div>
-            </div>
-          </li>
-        </Table>
+      <div className="Lesson-Panel">
+
+        <div className="first-column">
+          <div>
+            <span className="School-of">
+              {category}
+            </span>
+          </div>
+          <div>
+            <span className="Title">
+              {title}
+            </span>
+          </div>
+          <div>
+            <span className="Suzanne-Collins">
+              Suzanne Collins
+            </span>
+          </div>
+          <div className="crud">
+            <div><span className="Comments">Comments</span></div>
+            <div className="Line-2">|</div>
+            <button className="Remove" type="button" onClick={() => deleteBook(id)}>Remove</button>
+            <div className="Line-2">|</div>
+            <div><span className="Edit">Edit</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div />
+          <div>
+            Completed
+          </div>
+        </div>
+        <div>
+          <div>
+            CURRENT CHAPTER
+          </div>
+          <div />
+          <div>
+            <Button>UPDATE PROGRESS</Button>
+          </div>
+        </div>
+
       </div>
     </>
   );

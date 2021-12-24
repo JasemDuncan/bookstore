@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Books from './components/Books';
 import Categories from './components/Categories';
@@ -20,24 +22,29 @@ class App extends React.Component {
   render() {
     return (
       <>
-        {' '}
-        <Navbar bg="light" variant="light">
-          <Navbar.Brand href="/">Bookstore CMS</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/">BOOKS</Nav.Link>
-            <Nav.Link href="/Categories">CATEGORIES</Nav.Link>
-          </Nav>
-        </Navbar>
-        <Container>
-          <Router>
-            <div className="Row">
-              <Routes>
-                <Route path="/" element={<Books />} />
-                <Route path="Categories" element={<Categories />} />
-              </Routes>
-            </div>
-          </Router>
-        </Container>
+        <div className="Container">
+
+          {' '}
+          <Navbar className="NavBar">
+            <Navbar.Brand href="/">Bookstore CMS</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="/">BOOKS</Nav.Link>
+              <Nav.Link href="/Categories">CATEGORIES</Nav.Link>
+            </Nav>
+          </Navbar>
+          <Container>
+            <Router>
+              <Row>
+                <Col>
+                  <Routes>
+                    <Route path="/" element={<Books />} />
+                    <Route path="Categories" element={<Categories />} />
+                  </Routes>
+                </Col>
+              </Row>
+            </Router>
+          </Container>
+        </div>
       </>
     );
   }
