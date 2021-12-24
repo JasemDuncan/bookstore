@@ -22,14 +22,13 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div className="Container">
-
+        <div className="">
           {' '}
           <Navbar className="NavBar">
-            <Navbar.Brand href="/">Bookstore CMS</Navbar.Brand>
+            <Navbar.Brand href="/" className="BookstoreCMS">Bookstore CMS</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/">BOOKS</Nav.Link>
-              <Nav.Link href="/Categories">CATEGORIES</Nav.Link>
+              <Nav.Link href="/" className="Links LinksActive">BOOKS</Nav.Link>
+              <Nav.Link href="/Categories" className="Links">CATEGORIES</Nav.Link>
             </Nav>
           </Navbar>
           <Container>

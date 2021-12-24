@@ -14,6 +14,7 @@ const Book = (props) => {
   const deleteBook = (book) => {
     dispatch(removeBook(book));
   };
+  const percent = Math.floor(Math.random() * 100);
 
   return (
     <>
@@ -44,19 +45,35 @@ const Book = (props) => {
           </div>
         </div>
 
-        <div>
-          <div />
+        <div className="AllProgress">
+          <div className="Progress">
+            <div className="circle-wrap">
+              <div className="circle">
+                <div className="mask full">
+                  <div className="fill" />
+                </div>
+                <div className="mask half">
+                  <div className="fill" />
+                </div>
+                <div className="inside-circle"> </div>
+              </div>
+            </div>
+          </div>
           <div>
-            Completed
+            <div className="percent">{`${percent} %`}</div>
+            <span className="completed">Completed</span>
           </div>
         </div>
-        <div>
-          <div>
+        <div className="LineVertical" />
+        <div className="Current">
+          <div className="CurrentChapter">
             CURRENT CHAPTER
           </div>
-          <div />
+          <div className="Chapter">
+            Chapter 17
+          </div>
           <div>
-            <Button>UPDATE PROGRESS</Button>
+            <Button variant="primary" className="UpdateProgress">UPDATE PROGRESS</Button>
           </div>
         </div>
 
