@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import ListGroup from 'react-bootstrap/ListGroup';
 import { getBooks } from '../redux/books/books';
 import Book from './Book';
 import AddBook from './AddBook';
@@ -14,17 +15,20 @@ const Books = () => {
 
   return (
     <>
-      <div>
+      <ListGroup>
         {bookss.map((book) => (
-          <Book
-            key={book.id}
-            id={book.id}
-            title={book.title}
-            category={book.category}
-          />
+          <>
+            <ListGroup.Item className="ListGroup">
+              <Book
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                category={book.category}
+              />
+            </ListGroup.Item>
+          </>
         ))}
-        ;
-      </div>
+      </ListGroup>
       <AddBook />
     </>
   );

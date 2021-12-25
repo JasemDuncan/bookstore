@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as id } from 'uuid';
+import { Form } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { addBook } from '../redux/books/books';
 
 const AddBook = () => {
@@ -51,42 +55,48 @@ const AddBook = () => {
 
   return (
     <>
-      <div>
-        <form action="/" onSubmit={Submit}>
-          <div>
-            <div> ADD NEW BOOK</div>
-            <div>
-              {' '}
-              <input
-                type="text"
-                value={title}
-                placeholder="Write book title"
-                id="lblBookTitle"
-                onChange={lblBookTitleChanged}
-                required
-              />
-            </div>
-          </div>
-          <div>
-            <div>
-              <select
-                id="chkCategories"
-                placeholder="Category"
-                value={category}
-                onChange={chkCategoriesChanged}
-                required
-              >
-                <option value="" disabled hidden>Category</option>
-                { categories.map((items) => (
-                  <option key={items.id} value={items.name}>{items.name}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <div>
-            <button type="submit" value="Submit" onClick={Submit}>Add Book</button>
-          </div>
-        </form>
+      <div className="AllAdd">
+        <div className="Line" />
+        <div className="mb-3 AddBookText"> ADD NEW BOOK</div>
+        <Form action="/" onSubmit={Submit}>
+          <Row className="">
+            <Form.Group as={Col}>
+              <div className="ColumnRow">
+                <Form.Control
+                  type="text"
+                  value={title}
+                  placeholder="Book title"
+                  id="lblBookTitle"
+                  onChange={lblBookTitleChanged}
+                  required
+                />
+              </div>
+            </Form.Group>
+            <Form.Group as={Col}>
+              <div className="ColumnCheckBox">
+                <Form.Control
+                  as="select"
+                  id="chkCategories"
+                  placeholder="Category"
+                  value={category}
+                  onChange={chkCategoriesChanged}
+                  required
+                >
+                  <option value="" disabled hidden>Category</option>
+                  { categories.map((items) => (
+                    <option key={items.id} value={items.name}>{items.name}</option>
+                  ))}
+                </Form.Control>
+              </div>
+            </Form.Group>
+            <Form.Group as={Col}>
+              <div>
+                <Button className="ColumnButton" variant="primary" type="submit" value="Submit" onClick={Submit}>ADD BOOK</Button>
+              </div>
+
+            </Form.Group>
+          </Row>
+        </Form>
       </div>
     </>
   );

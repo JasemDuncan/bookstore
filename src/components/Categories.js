@@ -1,23 +1,19 @@
 import React from 'react';
 
 const Categories = () => {
-  const QuotesData = {
-    name: 'UNDER',
-    quote:
-            'CONSTRUCTION',
+  const Data = {
+    name: 'UNDER CONSTRUCTION',
   };
 
   const Category = () => {
-    const { name, quote } = QuotesData;
+    const { name } = Data;
     return (
       <>
         <div className="content">
-          <div className="nameQuote">
+          <div className="UnderConstruction">
             {name}
           </div>
-          <div className="quote">
-            {quote}
-          </div>
+
         </div>
       </>
     );
