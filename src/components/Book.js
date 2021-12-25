@@ -72,8 +72,8 @@ const Book = (props) => {
           <div className="Chapter">
             Chapter 17
           </div>
-          <div>
-            <Button variant="primary" className="UpdateProgress">UPDATE PROGRESS</Button>
+          <div className="Button">
+            <Button>UPDATE PROGRESS</Button>
           </div>
         </div>
 

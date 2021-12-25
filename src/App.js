@@ -27,7 +27,7 @@ class App extends React.Component {
           <Navbar className="NavBar">
             <Navbar.Brand href="/" className="BookstoreCMS">Bookstore CMS</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="/" className="Links LinksActive">BOOKS</Nav.Link>
+              <Nav.Link href="/" className="Links">BOOKS</Nav.Link>
               <Nav.Link href="/Categories" className="Links">CATEGORIES</Nav.Link>
             </Nav>
           </Navbar>

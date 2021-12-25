@@ -91,7 +91,7 @@ const AddBook = () => {
             </Form.Group>
             <Form.Group as={Col}>
               <div>
-                <Button className="ColumnButton" variant="primary" type="submit" value="Submit" onClick={Submit}>Add Book</Button>
+                <Button className="ColumnButton" variant="primary" type="submit" value="Submit" onClick={Submit}>ADD BOOK</Button>
               </div>
 
             </Form.Group>
